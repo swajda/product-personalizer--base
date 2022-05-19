@@ -22,7 +22,7 @@ const Product = props => {
     console.log('Summary');
     console.log('============');
     console.log('Name:', props.name);
-    console.log('Price:', getPrice());
+    console.log('Price:', getPrice);
     console.log('Size:', currentSize);
     console.log('Color:', currentColor);
   } 
@@ -36,7 +36,7 @@ const Product = props => {
       <div>
         <header>
           <h2 className={styles.name}>{props.title}</h2>
-          <span className={styles.price}>Price: {getPrice()}$</span>
+          <span className={styles.price}>Price: {getPrice}$</span>
         </header>
         <ProductForm
           currentColor={currentColor}
