@@ -1,5 +1,5 @@
 import styles from './Product.module.scss';
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import ProductImage from '../ProductImage/ProductImage';
 import ProductForm from '../ProductForm/ProductForm';
 
@@ -11,10 +11,10 @@ const Product = props => {
 
   
 
-  const getPrice = () => {
+  const getPrice = useMemo(() => {
     const price = props.sizes.find( ({ name }) => name === currentSize);
     return props.basePrice + price.additionalPrice
-  };
+  }, [currentSize, props.sizes, props.basePrice]);
 
   const addToCart = event => {
     event.preventDefault();
